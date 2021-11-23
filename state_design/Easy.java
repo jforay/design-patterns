@@ -2,6 +2,11 @@ import java.util.Random;
 
 public class Easy implements State {
     private ArithemeticGame game;
+    public Easy(ArithemeticGame game){
+        //game = new ArithemeticGame();
+        this.game = game;
+        this.game.setState(game.getEasyState());
+    }    
     public int getNum(){
         Random rand = new Random();
         int num = rand.nextInt(10);

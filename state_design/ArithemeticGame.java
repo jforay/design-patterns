@@ -1,14 +1,17 @@
 import java.util.Scanner;
 
 public class ArithemeticGame {
-    private State easyState = new Easy();
-    private State mediumState = new Medium();
-    private State hardState = new Hard(); 
+    private State easyState;// = getEasyState();
+    private State mediumState;// = getMediumState();
+    private State hardState;// = getHardState();
     private State state;
     private int score;
     private Scanner reader;   
 
     public ArithemeticGame(){
+        easyState = new Easy(this);
+        mediumState= new Medium(this);
+        hardState = new Hard(this);
         this.state = easyState;
         this.score = 0;
         reader = new Scanner(System.in);

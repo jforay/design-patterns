@@ -2,6 +2,11 @@ import java.util.Random;
 
 public class Medium implements State{
     private ArithemeticGame game;
+    public Medium(ArithemeticGame game){
+        //game = new ArithemeticGame();
+        this.game = game;
+        this.game.setState(game.getMediumState());
+    }
     public int getNum(){
         Random rand = new Random();
         int num = rand.nextInt(50);
